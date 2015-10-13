@@ -1,0 +1,379 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CFDAAE0D1BCB531500DFD3D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAAE0C1BCB531500DFD3D2 /* main.m */; };
+		CFDAAE101BCB531500DFD3D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAAE0F1BCB531500DFD3D2 /* AppDelegate.m */; };
+		CFDAAE161BCB531500DFD3D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDAAE141BCB531500DFD3D2 /* Main.storyboard */; };
+		CFDAAE181BCB531500DFD3D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFDAAE171BCB531500DFD3D2 /* Assets.xcassets */; };
+		CFDAAE1B1BCB531500DFD3D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDAAE191BCB531500DFD3D2 /* LaunchScreen.storyboard */; };
+		CFFB61571BCCF6A900B5B373 /* SJCoreTelephony.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFB61561BCCF6A900B5B373 /* SJCoreTelephony.m */; settings = {ASSET_TAGS = (); }; };
+		CFFF2FF71BCB84DC0033B001 /* GPS.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFFF2FF41BCB84DC0033B001 /* GPS.txt */; settings = {ASSET_TAGS = (); }; };
+		CFFF2FF81BCB84DC0033B001 /* Wi-Fi.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFFF2FF51BCB84DC0033B001 /* Wi-Fi.txt */; settings = {ASSET_TAGS = (); }; };
+		CFFF2FF91BCB84DC0033B001 /* 手机基站.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFFF2FF61BCB84DC0033B001 /* 手机基站.txt */; settings = {ASSET_TAGS = (); }; };
+		CFFF30011BCB855A0033B001 /* SJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF2FFD1BCB855A0033B001 /* SJDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		CFFF30021BCB855A0033B001 /* SJRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF2FFF1BCB855A0033B001 /* SJRootTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		CFFF30051BCB865D0033B001 /* SJLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF30041BCB865D0033B001 /* SJLocationManager.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CFDAAE081BCB531500DFD3D2 /* SJLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFDAAE0C1BCB531500DFD3D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CFDAAE0E1BCB531500DFD3D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CFDAAE0F1BCB531500DFD3D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CFDAAE151BCB531500DFD3D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CFDAAE171BCB531500DFD3D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFDAAE1A1BCB531500DFD3D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CFDAAE1C1BCB531500DFD3D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFFB61551BCCF6A900B5B373 /* SJCoreTelephony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJCoreTelephony.h; sourceTree = "<group>"; };
+		CFFB61561BCCF6A900B5B373 /* SJCoreTelephony.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJCoreTelephony.m; sourceTree = "<group>"; };
+		CFFF2FF41BCB84DC0033B001 /* GPS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GPS.txt; sourceTree = "<group>"; };
+		CFFF2FF51BCB84DC0033B001 /* Wi-Fi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Wi-Fi.txt"; sourceTree = "<group>"; };
+		CFFF2FF61BCB84DC0033B001 /* 手机基站.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "手机基站.txt"; sourceTree = "<group>"; };
+		CFFF2FFC1BCB855A0033B001 /* SJDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJDetailViewController.h; sourceTree = "<group>"; };
+		CFFF2FFD1BCB855A0033B001 /* SJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJDetailViewController.m; sourceTree = "<group>"; };
+		CFFF2FFE1BCB855A0033B001 /* SJRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJRootTableViewController.h; sourceTree = "<group>"; };
+		CFFF2FFF1BCB855A0033B001 /* SJRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJRootTableViewController.m; sourceTree = "<group>"; };
+		CFFF30031BCB865D0033B001 /* SJLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJLocationManager.h; sourceTree = "<group>"; };
+		CFFF30041BCB865D0033B001 /* SJLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJLocationManager.m; sourceTree = "<group>"; };
+		CFFF30061BCC9B4B0033B001 /* SJLocation.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJLocation.pch; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFDAAE051BCB531500DFD3D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CFDAADFF1BCB531500DFD3D2 = {
+			isa = PBXGroup;
+			children = (
+				CFDAAE0A1BCB531500DFD3D2 /* SJLocation */,
+				CFDAAE091BCB531500DFD3D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CFDAAE091BCB531500DFD3D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAAE081BCB531500DFD3D2 /* SJLocation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFDAAE0A1BCB531500DFD3D2 /* SJLocation */ = {
+			isa = PBXGroup;
+			children = (
+				CFFF2FFA1BCB855A0033B001 /* Class */,
+				CFFF2FF31BCB84DC0033B001 /* Resources */,
+				CFDAAE0B1BCB531500DFD3D2 /* Supporting Files */,
+			);
+			path = SJLocation;
+			sourceTree = "<group>";
+		};
+		CFDAAE0B1BCB531500DFD3D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAAE0C1BCB531500DFD3D2 /* main.m */,
+				CFDAAE0E1BCB531500DFD3D2 /* AppDelegate.h */,
+				CFDAAE0F1BCB531500DFD3D2 /* AppDelegate.m */,
+				CFDAAE141BCB531500DFD3D2 /* Main.storyboard */,
+				CFDAAE171BCB531500DFD3D2 /* Assets.xcassets */,
+				CFDAAE191BCB531500DFD3D2 /* LaunchScreen.storyboard */,
+				CFDAAE1C1BCB531500DFD3D2 /* Info.plist */,
+				CFFF30061BCC9B4B0033B001 /* SJLocation.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFFF2FF31BCB84DC0033B001 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CFFF2FF41BCB84DC0033B001 /* GPS.txt */,
+				CFFF2FF51BCB84DC0033B001 /* Wi-Fi.txt */,
+				CFFF2FF61BCB84DC0033B001 /* 手机基站.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CFFF2FFA1BCB855A0033B001 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				CFFF2FFB1BCB855A0033B001 /* Controller */,
+				CFFF30001BCB855A0033B001 /* SJLocationManager */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		CFFF2FFB1BCB855A0033B001 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CFFF2FFE1BCB855A0033B001 /* SJRootTableViewController.h */,
+				CFFF2FFF1BCB855A0033B001 /* SJRootTableViewController.m */,
+				CFFF2FFC1BCB855A0033B001 /* SJDetailViewController.h */,
+				CFFF2FFD1BCB855A0033B001 /* SJDetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CFFF30001BCB855A0033B001 /* SJLocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				CFFF30031BCB865D0033B001 /* SJLocationManager.h */,
+				CFFF30041BCB865D0033B001 /* SJLocationManager.m */,
+				CFFB61551BCCF6A900B5B373 /* SJCoreTelephony.h */,
+				CFFB61561BCCF6A900B5B373 /* SJCoreTelephony.m */,
+			);
+			path = SJLocationManager;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFDAAE071BCB531500DFD3D2 /* SJLocation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFDAAE1F1BCB531500DFD3D2 /* Build configuration list for PBXNativeTarget "SJLocation" */;
+			buildPhases = (
+				CFDAAE041BCB531500DFD3D2 /* Sources */,
+				CFDAAE051BCB531500DFD3D2 /* Frameworks */,
+				CFDAAE061BCB531500DFD3D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SJLocation;
+			productName = SJLocation;
+			productReference = CFDAAE081BCB531500DFD3D2 /* SJLocation.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFDAAE001BCB531500DFD3D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SJ;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = shejun.zhou;
+				TargetAttributes = {
+					CFDAAE071BCB531500DFD3D2 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = CFDAAE031BCB531500DFD3D2 /* Build configuration list for PBXProject "SJLocation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFDAADFF1BCB531500DFD3D2;
+			productRefGroup = CFDAAE091BCB531500DFD3D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFDAAE071BCB531500DFD3D2 /* SJLocation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFDAAE061BCB531500DFD3D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFFF2FF91BCB84DC0033B001 /* 手机基站.txt in Resources */,
+				CFDAAE1B1BCB531500DFD3D2 /* LaunchScreen.storyboard in Resources */,
+				CFDAAE181BCB531500DFD3D2 /* Assets.xcassets in Resources */,
+				CFFF2FF81BCB84DC0033B001 /* Wi-Fi.txt in Resources */,
+				CFFF2FF71BCB84DC0033B001 /* GPS.txt in Resources */,
+				CFDAAE161BCB531500DFD3D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFDAAE041BCB531500DFD3D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFFF30051BCB865D0033B001 /* SJLocationManager.m in Sources */,
+				CFFF30011BCB855A0033B001 /* SJDetailViewController.m in Sources */,
+				CFDAAE101BCB531500DFD3D2 /* AppDelegate.m in Sources */,
+				CFFF30021BCB855A0033B001 /* SJRootTableViewController.m in Sources */,
+				CFDAAE0D1BCB531500DFD3D2 /* main.m in Sources */,
+				CFFB61571BCCF6A900B5B373 /* SJCoreTelephony.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CFDAAE141BCB531500DFD3D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFDAAE151BCB531500DFD3D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CFDAAE191BCB531500DFD3D2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFDAAE1A1BCB531500DFD3D2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CFDAAE1D1BCB531500DFD3D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CFDAAE1E1BCB531500DFD3D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFDAAE201BCB531500DFD3D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				GCC_PREFIX_HEADER = SJLocation/SJLocation.pch;
+				INFOPLIST_FILE = SJLocation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fx.YiBan.SJLocation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CFDAAE211BCB531500DFD3D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				GCC_PREFIX_HEADER = SJLocation/SJLocation.pch;
+				INFOPLIST_FILE = SJLocation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fx.YiBan.SJLocation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFDAAE031BCB531500DFD3D2 /* Build configuration list for PBXProject "SJLocation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFDAAE1D1BCB531500DFD3D2 /* Debug */,
+				CFDAAE1E1BCB531500DFD3D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFDAAE1F1BCB531500DFD3D2 /* Build configuration list for PBXNativeTarget "SJLocation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFDAAE201BCB531500DFD3D2 /* Debug */,
+				CFDAAE211BCB531500DFD3D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFDAAE001BCB531500DFD3D2 /* Project object */;
+}
