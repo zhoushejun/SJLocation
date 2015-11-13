@@ -38,11 +38,11 @@
 
 #pragma mark - CLLocationManagerDelegate
 
-- (void)locationManager:(CLLocationManager *)manager
-     didUpdateLocations:(NSArray<CLLocation *> *)locations {
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     NSLog(@"%@", locations);
     CLLocation *location = locations[0];
-    NSLog(@"%f", location.altitude);
+    NSLog(@"altitude:%f", location.altitude);
+    NSLog(@"coordinate:%f - %f", location.coordinate.latitude, location.coordinate.longitude);
     
     CLGeocoder *geocoder=[[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -56,8 +56,11 @@
                 [self stopLocation];//如果不需要实时定位，使用完后立即关闭定位服务
             }
         }
-        
     }];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+    [_locationManager startUpdatingLocation];
 }
 
 #pragma mark - public function
@@ -79,14 +82,13 @@
 -(void)startLocation {
     if([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied)
     {
-        _locationManager = [[CLLocationManager alloc]init];
+        _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         if (!IOS_VERSION_7){
-            [_locationManager requestAlwaysAuthorization];
+            [_locationManager requestWhenInUseAuthorization];
         }
         _locationManager.distanceFilter = 100;
-        [_locationManager startUpdatingLocation];
     }else {
         if (IOS_VERSION_7){
             UIAlertView *alvertView=[[UIAlertView alloc]initWithTitle:@"提示"
@@ -97,27 +99,29 @@
             [alvertView show];
            
         }else{
-             UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"确定"
-                                                                  style:UIAlertActionStyleDefault
-                                                                handler:^(UIAlertAction * _Nonnull action) {
-                                                                    NSLog(@"点击确定");
-                                                                }];
+            UIAlertAction *okAlertAction = [UIAlertAction actionWithTitle:@"设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                NSLog(@"点击设置");
+                NSLog(@"设置界面");
+                NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                    [[UIApplication sharedApplication] openURL:url];
+                }
+            }];
+            UIAlertAction *cancleAlertAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                NSLog(@"点击取消");
+            }];
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示"
-                                                                                     message:@"需要开启定位服务,请到设置->隐私,打开定位服务"
+                                                                                     message:@"需要授权本应用程序使用定位服务"
                                                                               preferredStyle:UIAlertControllerStyleAlert];
-            [alertController addAction:alertAction];
+            [alertController addAction:okAlertAction];
+            [alertController addAction:cancleAlertAction];
             UIWindow *win = [UIApplication sharedApplication].keyWindow;
-            [win.rootViewController presentViewController:alertController
-                                                 animated:YES
-                                               completion:^{
-                                                   
-                                               }];
+            [win.rootViewController presentViewController:alertController animated:YES completion:nil];
         }
     }
 }
 
-- (void)locationManager:(CLLocationManager *)manager
-       didFailWithError:(NSError *)error {
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     [self stopLocation];
     
 }

@@ -9,7 +9,6 @@
 #import "SJRootTableViewController.h"
 #import "SJDetailViewController.h"
 #import "SJLocationManager.h"
-#import "SJCoreTelephony.h"
 
 @interface SJRootTableViewController ()
 
@@ -28,7 +27,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _dataArray = [NSArray arrayWithObjects:@"手机基站", @"Wi-Fi", @"GPS", nil];
+    _dataArray = [NSArray arrayWithObjects:@"GPS", nil];
     self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
@@ -66,19 +65,6 @@
     switch (indexPath.row) {
         case 0:
         {
-            SJCoreTelephony *cell = [[SJCoreTelephony alloc] init];
-            [cell requestCellInfo];
-        }
-            break;
-            
-        case 1:
-        {
-            
-        }
-            break;
-            
-        case 2:
-        {
             __weak SJRootTableViewController *weakSelf = self;
             SJLocationManager *locationManager = [SJLocationManager sharedLocationManager];
             [locationManager requestLocationCompleteHandler:^(NSDictionary *addressDictionary) {
@@ -95,15 +81,12 @@
                 detailVC.locationText = location;
                 [weakSelf.navigationController pushViewController:detailVC animated:YES];
             }];
-
-            
         }
             break;
             
         default:
             break;
     }
-    
 }
 
 @end

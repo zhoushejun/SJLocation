@@ -12,7 +12,6 @@
 		CFDAAE161BCB531500DFD3D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDAAE141BCB531500DFD3D2 /* Main.storyboard */; };
 		CFDAAE181BCB531500DFD3D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFDAAE171BCB531500DFD3D2 /* Assets.xcassets */; };
 		CFDAAE1B1BCB531500DFD3D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDAAE191BCB531500DFD3D2 /* LaunchScreen.storyboard */; };
-		CFFB61571BCCF6A900B5B373 /* SJCoreTelephony.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFB61561BCCF6A900B5B373 /* SJCoreTelephony.m */; settings = {ASSET_TAGS = (); }; };
 		CFFF2FF71BCB84DC0033B001 /* GPS.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFFF2FF41BCB84DC0033B001 /* GPS.txt */; settings = {ASSET_TAGS = (); }; };
 		CFFF2FF81BCB84DC0033B001 /* Wi-Fi.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFFF2FF51BCB84DC0033B001 /* Wi-Fi.txt */; settings = {ASSET_TAGS = (); }; };
 		CFFF2FF91BCB84DC0033B001 /* 手机基站.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFFF2FF61BCB84DC0033B001 /* 手机基站.txt */; settings = {ASSET_TAGS = (); }; };
@@ -30,8 +29,6 @@
 		CFDAAE171BCB531500DFD3D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFDAAE1A1BCB531500DFD3D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFDAAE1C1BCB531500DFD3D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CFFB61551BCCF6A900B5B373 /* SJCoreTelephony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJCoreTelephony.h; sourceTree = "<group>"; };
-		CFFB61561BCCF6A900B5B373 /* SJCoreTelephony.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJCoreTelephony.m; sourceTree = "<group>"; };
 		CFFF2FF41BCB84DC0033B001 /* GPS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GPS.txt; sourceTree = "<group>"; };
 		CFFF2FF51BCB84DC0033B001 /* Wi-Fi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Wi-Fi.txt"; sourceTree = "<group>"; };
 		CFFF2FF61BCB84DC0033B001 /* 手机基站.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "手机基站.txt"; sourceTree = "<group>"; };
@@ -131,8 +128,6 @@
 			children = (
 				CFFF30031BCB865D0033B001 /* SJLocationManager.h */,
 				CFFF30041BCB865D0033B001 /* SJLocationManager.m */,
-				CFFB61551BCCF6A900B5B373 /* SJCoreTelephony.h */,
-				CFFB61561BCCF6A900B5B373 /* SJCoreTelephony.m */,
 			);
 			path = SJLocationManager;
 			sourceTree = "<group>";
@@ -216,7 +211,6 @@
 				CFDAAE101BCB531500DFD3D2 /* AppDelegate.m in Sources */,
 				CFFF30021BCB855A0033B001 /* SJRootTableViewController.m in Sources */,
 				CFDAAE0D1BCB531500DFD3D2 /* main.m in Sources */,
-				CFFB61571BCCF6A900B5B373 /* SJCoreTelephony.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
