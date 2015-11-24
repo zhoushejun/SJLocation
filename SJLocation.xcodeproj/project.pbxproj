@@ -12,12 +12,12 @@
 		CFDAAE161BCB531500DFD3D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDAAE141BCB531500DFD3D2 /* Main.storyboard */; };
 		CFDAAE181BCB531500DFD3D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFDAAE171BCB531500DFD3D2 /* Assets.xcassets */; };
 		CFDAAE1B1BCB531500DFD3D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDAAE191BCB531500DFD3D2 /* LaunchScreen.storyboard */; };
-		CFFF2FF71BCB84DC0033B001 /* GPS.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFFF2FF41BCB84DC0033B001 /* GPS.txt */; settings = {ASSET_TAGS = (); }; };
-		CFFF2FF81BCB84DC0033B001 /* Wi-Fi.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFFF2FF51BCB84DC0033B001 /* Wi-Fi.txt */; settings = {ASSET_TAGS = (); }; };
-		CFFF2FF91BCB84DC0033B001 /* 手机基站.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFFF2FF61BCB84DC0033B001 /* 手机基站.txt */; settings = {ASSET_TAGS = (); }; };
-		CFFF30011BCB855A0033B001 /* SJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF2FFD1BCB855A0033B001 /* SJDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
-		CFFF30021BCB855A0033B001 /* SJRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF2FFF1BCB855A0033B001 /* SJRootTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		CFFF30051BCB865D0033B001 /* SJLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF30041BCB865D0033B001 /* SJLocationManager.m */; settings = {ASSET_TAGS = (); }; };
+		CFFF2FF71BCB84DC0033B001 /* GPS.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFFF2FF41BCB84DC0033B001 /* GPS.txt */; };
+		CFFF2FF81BCB84DC0033B001 /* Wi-Fi.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFFF2FF51BCB84DC0033B001 /* Wi-Fi.txt */; };
+		CFFF2FF91BCB84DC0033B001 /* 手机基站.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFFF2FF61BCB84DC0033B001 /* 手机基站.txt */; };
+		CFFF30011BCB855A0033B001 /* SJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF2FFD1BCB855A0033B001 /* SJDetailViewController.m */; };
+		CFFF30021BCB855A0033B001 /* SJRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF2FFF1BCB855A0033B001 /* SJRootTableViewController.m */; };
+		CFFF30051BCB865D0033B001 /* SJLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF30041BCB865D0033B001 /* SJLocationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

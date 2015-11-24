@@ -53,7 +53,7 @@
             if (_locationCompletionHandlerBlock) {
                 _locationCompletionHandlerBlock(addressDictionary);
                 _locationCompletionHandlerBlock = nil;
-                [self stopLocation];//如果不需要实时定位，使用完后立即关闭定位服务
+//                [self stopLocation];//如果不需要实时定位，使用完后立即关闭定位服务
             }
         }
     }];
@@ -89,6 +89,9 @@
             [_locationManager requestWhenInUseAuthorization];
         }
         _locationManager.distanceFilter = 100;
+        if (!IOS_VERSION_8) {
+            _locationManager.allowsBackgroundLocationUpdates = YES;
+        }
     }else {
         if (IOS_VERSION_7){
             UIAlertView *alvertView=[[UIAlertView alloc]initWithTitle:@"提示"
