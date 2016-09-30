@@ -53,7 +53,7 @@
             if (_locationCompletionHandlerBlock) {
                 _locationCompletionHandlerBlock(addressDictionary);
                 _locationCompletionHandlerBlock = nil;
-//                [self stopLocation];//如果不需要实时定位，使用完后立即关闭定位服务
+//                [self stopLocation];///< 如果不需要实时定位，使用完后立即关闭定位服务
             }
         }
     }];
@@ -80,47 +80,38 @@
 }
 
 -(void)startLocation {
-    if([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied)
-    {
+    if([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied) {
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        if (!IOS_VERSION_7){
-            [_locationManager requestWhenInUseAuthorization];
+        if (IOS_VERSION >= 8.0){
+            [_locationManager requestWhenInUseAuthorization]; ///< 运行期间允许访问位置信息，当APP退到后台时在状态栏处会显示《"SJLocation"正在使用您的位置信息》提示框
+            [_locationManager requestAlwaysAuthorization]; ///< 始终允许访问位置信息
         }
         _locationManager.distanceFilter = 100;
-        if (!IOS_VERSION_8) {
+        if (IOS_VERSION >= 9.0) {
             _locationManager.allowsBackgroundLocationUpdates = YES;
         }
-    }else {
-        if (IOS_VERSION_7){
-            UIAlertView *alvertView=[[UIAlertView alloc]initWithTitle:@"提示"
-                                                              message:@"需要开启定位服务,请到设置->隐私,打开定位服务"
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"确定"
-                                                    otherButtonTitles: nil];
-            [alvertView show];
-           
-        }else{
-            UIAlertAction *okAlertAction = [UIAlertAction actionWithTitle:@"设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                NSLog(@"点击设置");
-                NSLog(@"设置界面");
-                NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-                if ([[UIApplication sharedApplication] canOpenURL:url]) {
-                    [[UIApplication sharedApplication] openURL:url];
-                }
-            }];
-            UIAlertAction *cancleAlertAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                NSLog(@"点击取消");
-            }];
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示"
-                                                                                     message:@"需要授权本应用程序使用定位服务"
-                                                                              preferredStyle:UIAlertControllerStyleAlert];
-            [alertController addAction:okAlertAction];
-            [alertController addAction:cancleAlertAction];
-            UIWindow *win = [UIApplication sharedApplication].keyWindow;
-            [win.rootViewController presentViewController:alertController animated:YES completion:nil];
-        }
+    }
+    else {
+        
+        UIAlertAction *okAlertAction = [UIAlertAction actionWithTitle:@"去设置授权" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"点击去设置授权");
+            NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+            if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                [[UIApplication sharedApplication] openURL:url];
+            }
+        }];
+        UIAlertAction *cancleAlertAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"点击取消");
+        }];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示"
+                                                                                 message:@"使用定位服务需要得到您的授权"
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:cancleAlertAction];
+        [alertController addAction:okAlertAction];
+        UIWindow *win = [UIApplication sharedApplication].keyWindow;
+        [win.rootViewController presentViewController:alertController animated:YES completion:nil];
     }
 }
 

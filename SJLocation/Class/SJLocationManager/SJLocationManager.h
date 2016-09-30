@@ -16,7 +16,6 @@
 #import <CoreLocation/CoreLocation.h>
 
 typedef void(^LocationCompletionHandlerBlock)(NSDictionary *addressDictionary);
-typedef void(^LOcationErrorBlock)(NSError *error);
 
 /**
  @class     SJLocationManager
