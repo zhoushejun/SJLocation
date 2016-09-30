@@ -28,8 +28,6 @@
 #define CurrentDevice        [UIDevice currentDevice]
 #define CurrentSystemVersion [CurrentDevice systemVersion]
 #define IOS_VERSION          [CurrentSystemVersion floatValue]
-#define IOS_VERSION_7      (IOS_VERSION < 8.0)
-#define IOS_VERSION_8      (IOS_VERSION < 9.0)
 // @}end of version
 
 /** @name 获取屏幕 宽度、高度 及 状态栏 高度 */
