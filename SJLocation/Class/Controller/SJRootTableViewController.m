@@ -69,10 +69,17 @@
             SJLocationManager *locationManager = [SJLocationManager sharedLocationManager];
             [locationManager requestLocationCompleteHandler:^(NSDictionary *addressDictionary) {
                 
+                NSString *street = nil;
+                if ([[addressDictionary allKeys] containsObject:@"Street"]) {
+                    street = [NSString stringWithFormat:@"%@", addressDictionary[@"Street"]];
+                }else if ([[addressDictionary allKeys] containsObject:@"Name"]) {
+                    street = [NSString stringWithFormat:@"%@", addressDictionary[@"Name"]];
+                }
                 NSString *location = [NSString stringWithFormat:@"%@-%@-%@-%@", addressDictionary[@"State"],
                                       addressDictionary[@"City"],
                                       addressDictionary[@"SubLocality"],
-                                      addressDictionary[@"Street"]];
+                                      street];
+                
                 NSLog(@"显示地址：%@", location);
                 
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
