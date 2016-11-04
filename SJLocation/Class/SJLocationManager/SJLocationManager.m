@@ -11,10 +11,26 @@
 
 @interface SJLocationManager ()
 
-@property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) LocationCompletionHandlerBlock locationCompletionHandlerBlock;
+@property (nonatomic, strong) CLLocationManager *locationManager; ///< 系统地理位置管理者
+@property (nonatomic, strong) LocationCompletionHandlerBlock locationCompletionHandlerBlock; ///< 回调block
 
-- (BOOL)locationServicesEnabled;
+/** 
+ @method    showAuthorizationAlertAction
+ @abstract  显示授权窗口 
+ */
+- (void)showAuthorizationAlertAction;
+
+/**
+ @method    startLocation
+ @abstract  开始定位 
+ */
+-(void)startLocation;
+
+/**
+ @method    stopLocation
+ @abstract  停止定位 
+ */
+-(void)stopLocation;
 
 @end
 
@@ -53,7 +69,9 @@
             if (_locationCompletionHandlerBlock) {
                 _locationCompletionHandlerBlock(addressDictionary);
                 _locationCompletionHandlerBlock = nil;
-//                [self stopLocation];///< 如果不需要实时定位，使用完后立即关闭定位服务
+                if (_autoStopLocation) {
+                    [self stopLocation]; ///< 如果不需要实时定位，使用完后立即关闭定位服务
+                }
             }
         }
     }];
@@ -61,6 +79,11 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
     [_locationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    [self stopLocation];
+    
 }
 
 #pragma mark - public function
@@ -74,9 +97,24 @@
 
 #pragma mark - private function
 
-- (BOOL)locationServicesEnabled {
-    
-    return YES;
+- (void)showAuthorizationAlertAction {
+    UIAlertAction *okAlertAction = [UIAlertAction actionWithTitle:@"去设置授权" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"点击去设置授权");
+        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }];
+    UIAlertAction *cancleAlertAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"点击取消");
+    }];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示"
+                                                                             message:@"使用定位服务需要得到您的授权"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:cancleAlertAction];
+    [alertController addAction:okAlertAction];
+    UIWindow *win = [UIApplication sharedApplication].keyWindow;
+    [win.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 -(void)startLocation {
@@ -94,36 +132,13 @@
         }
     }
     else {
-        
-        UIAlertAction *okAlertAction = [UIAlertAction actionWithTitle:@"去设置授权" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"点击去设置授权");
-            NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-            if ([[UIApplication sharedApplication] canOpenURL:url]) {
-                [[UIApplication sharedApplication] openURL:url];
-            }
-        }];
-        UIAlertAction *cancleAlertAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"点击取消");
-        }];
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示"
-                                                                                 message:@"使用定位服务需要得到您的授权"
-                                                                          preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:cancleAlertAction];
-        [alertController addAction:okAlertAction];
-        UIWindow *win = [UIApplication sharedApplication].keyWindow;
-        [win.rootViewController presentViewController:alertController animated:YES completion:nil];
+        [self showAuthorizationAlertAction];
     }
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    [self stopLocation];
-    
 }
 
 -(void)stopLocation {
     [_locationManager stopUpdatingLocation];
     _locationManager = nil;
 }
-
 
 @end

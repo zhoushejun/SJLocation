@@ -67,6 +67,7 @@
         {
             __weak SJRootTableViewController *weakSelf = self;
             SJLocationManager *locationManager = [SJLocationManager sharedLocationManager];
+            locationManager.autoStopLocation = YES;
             [locationManager requestLocationCompleteHandler:^(NSDictionary *addressDictionary) {
                 
                 NSString *street = nil;
