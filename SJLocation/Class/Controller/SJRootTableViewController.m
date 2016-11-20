@@ -8,7 +8,7 @@
 
 #import "SJRootTableViewController.h"
 #import "SJDetailViewController.h"
-#import "SJLocation.h"
+#import "SJLocationManager.h"
 
 @interface SJRootTableViewController ()
 
@@ -66,7 +66,7 @@
         case 0:
         {
             __weak SJRootTableViewController *weakSelf = self;
-            SJLocation *locationManager = [SJLocation sharedLocationManager];
+            SJLocationManager *locationManager = [SJLocationManager sharedLocationManager];
             locationManager.autoStopLocation = YES;
             [locationManager requestLocationCompleteHandler:^(NSDictionary *addressDictionary) {
                 
