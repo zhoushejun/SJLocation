@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18FA7F301DE18BE500C54FE0 /* SJLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA7F2F1DE18BE500C54FE0 /* SJLocationManager.m */; };
+		18FA7F341DE1938200C54FE0 /* SJLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA7F331DE1938200C54FE0 /* SJLocationManager.m */; };
 		CFDAAE0D1BCB531500DFD3D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAAE0C1BCB531500DFD3D2 /* main.m */; };
 		CFDAAE101BCB531500DFD3D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAAE0F1BCB531500DFD3D2 /* AppDelegate.m */; };
 		CFDAAE161BCB531500DFD3D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDAAE141BCB531500DFD3D2 /* Main.storyboard */; };
@@ -21,8 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18FA7F2E1DE18BE500C54FE0 /* SJLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJLocationManager.h; sourceTree = "<group>"; };
-		18FA7F2F1DE18BE500C54FE0 /* SJLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJLocationManager.m; sourceTree = "<group>"; };
+		18FA7F321DE1938200C54FE0 /* SJLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJLocationManager.h; sourceTree = "<group>"; };
+		18FA7F331DE1938200C54FE0 /* SJLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJLocationManager.m; sourceTree = "<group>"; };
 		CFDAAE081BCB531500DFD3D2 /* SJLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDAAE0C1BCB531500DFD3D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CFDAAE0E1BCB531500DFD3D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,14 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18FA7F2D1DE18BE500C54FE0 /* SJLocationManager */ = {
+		18FA7F311DE1938200C54FE0 /* SJLocationManager */ = {
 			isa = PBXGroup;
 			children = (
-				18FA7F2E1DE18BE500C54FE0 /* SJLocationManager.h */,
-				18FA7F2F1DE18BE500C54FE0 /* SJLocationManager.m */,
+				18FA7F321DE1938200C54FE0 /* SJLocationManager.h */,
+				18FA7F331DE1938200C54FE0 /* SJLocationManager.m */,
 			);
 			path = SJLocationManager;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		CFDAADFF1BCB531500DFD3D2 = {
 			isa = PBXGroup;
@@ -80,10 +80,10 @@
 		CFDAAE0A1BCB531500DFD3D2 /* SJLocation */ = {
 			isa = PBXGroup;
 			children = (
+				18FA7F311DE1938200C54FE0 /* SJLocationManager */,
 				CFFF2FFA1BCB855A0033B001 /* Class */,
 				CFFF2FF31BCB84DC0033B001 /* Resources */,
 				CFDAAE0B1BCB531500DFD3D2 /* Supporting Files */,
-				18FA7F2D1DE18BE500C54FE0 /* SJLocationManager */,
 			);
 			path = SJLocation;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18FA7F301DE18BE500C54FE0 /* SJLocationManager.m in Sources */,
+				18FA7F341DE1938200C54FE0 /* SJLocationManager.m in Sources */,
 				CFFF30011BCB855A0033B001 /* SJDetailViewController.m in Sources */,
 				CFDAAE101BCB531500DFD3D2 /* AppDelegate.m in Sources */,
 				CFFF30021BCB855A0033B001 /* SJRootTableViewController.m in Sources */,
