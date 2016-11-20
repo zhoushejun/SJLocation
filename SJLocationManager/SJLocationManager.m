@@ -9,6 +9,30 @@
 #import "SJLocationManager.h"
 #import <UIKit/UIKit.h>
 
+/** @name DEBUG 模式下打印日志和当前行数 */
+// @{
+#if DEBUG
+#define SJLog(FORMAT, ...) fprintf(stderr,"\nfunction:%s line:%d content--->>> \n%s\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#define SJLogCurrentFunction fprintf(stderr,"\nfuction:%s", __FUNCTION__);
+#else
+#define SJLog(FORMAT, ...) nil
+#endif
+// @}end of DEBUG 模式下打印日志和当前行数
+
+
+/** @name version */
+// @{
+#define kSJ_currentDevice        [UIDevice currentDevice]
+#define kSJ_currentSystemVersion [kSJ_currentDevice systemVersion]
+#define kSJ_iOS_VERSION          [kSJ_currentSystemVersion floatValue]
+// @}end of version
+
+/** @name 获取屏幕 宽度、高度 及 状态栏 高度 */
+// @{
+#define kSJ_SCREEN_WIDTH  ([UIScreen mainScreen].bounds.size.width)
+#define kSJ_SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+// @}end of 获取屏幕 宽度、高度 及 状态栏 高度
+
 @interface SJLocationManager ()
 
 @property (nonatomic, strong) CLLocationManager *locationManager; ///< 系统地理位置管理者
@@ -55,17 +79,17 @@
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    NSLog(@"%@", locations);
+    SJLog(@"%@", locations);
     CLLocation *location = locations[0];
-    NSLog(@"altitude:%f", location.altitude);
-    NSLog(@"coordinate:%f - %f", location.coordinate.latitude, location.coordinate.longitude);
+    SJLog(@"altitude:%f", location.altitude);
+    SJLog(@"coordinate:%f - %f", location.coordinate.latitude, location.coordinate.longitude);
     
     CLGeocoder *geocoder=[[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         if (placemarks.count > 0) {
             CLPlacemark *placemark = [placemarks objectAtIndex:0];
             NSDictionary *addressDictionary = placemark.addressDictionary;
-            NSLog(@"addressDic:%@", addressDictionary);
+            SJLog(@"addressDic:%@", addressDictionary);
             if (_locationCompletionHandlerBlock) {
                 _locationCompletionHandlerBlock(addressDictionary);
                 _locationCompletionHandlerBlock = nil;
@@ -99,14 +123,14 @@
 
 - (void)showAuthorizationAlertAction {
     UIAlertAction *okAlertAction = [UIAlertAction actionWithTitle:@"去设置授权" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"点击去设置授权");
+        SJLog(@"点击去设置授权");
         NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
         if ([[UIApplication sharedApplication] canOpenURL:url]) {
             [[UIApplication sharedApplication] openURL:url];
         }
     }];
     UIAlertAction *cancleAlertAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"点击取消");
+        SJLog(@"点击取消");
     }];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示"
                                                                              message:@"使用定位服务需要得到您的授权"
@@ -122,12 +146,12 @@
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        if (IOS_VERSION >= 8.0){
+        if (kSJ_iOS_VERSION >= 8.0){
             [_locationManager requestWhenInUseAuthorization]; ///< 运行期间允许访问位置信息，当APP退到后台时在状态栏处会显示《"SJLocation"正在使用您的位置信息》提示框
             [_locationManager requestAlwaysAuthorization]; ///< 始终允许访问位置信息
         }
         _locationManager.distanceFilter = 100;
-        if (IOS_VERSION >= 9.0) {
+        if (kSJ_iOS_VERSION >= 9.0) {
             _locationManager.allowsBackgroundLocationUpdates = YES;
         }
     }
