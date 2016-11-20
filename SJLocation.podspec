@@ -1,7 +1,7 @@
 
 
 Pod::Spec.new do |s|
-s.name         = "SJLocationManager"
+s.name         = "SJLocation"
 s.version      = "1.0"
 s.summary      = "The easiest way to user location."
 s.homepage     = "https://github.com/zhoushejun/SJLocation"
