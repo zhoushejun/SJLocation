@@ -1,4 +1,3 @@
-
 Pod::Spec.new do |s|
   s.name         = "SJLocation"
   s.version      = "1.0"
