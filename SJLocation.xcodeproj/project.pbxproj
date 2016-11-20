@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		181F4CF81DE1E0180032B65F /* SJLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F4CF71DE1E0180032B65F /* SJLocationManager.m */; };
+		181F4CFD1DE1E4780032B65F /* SJLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F4CFC1DE1E4780032B65F /* SJLocationManager.m */; };
 		CFDAAE0D1BCB531500DFD3D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAAE0C1BCB531500DFD3D2 /* main.m */; };
 		CFDAAE101BCB531500DFD3D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAAE0F1BCB531500DFD3D2 /* AppDelegate.m */; };
 		CFDAAE161BCB531500DFD3D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDAAE141BCB531500DFD3D2 /* Main.storyboard */; };
@@ -21,8 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		181F4CF61DE1E0180032B65F /* SJLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJLocationManager.h; sourceTree = "<group>"; };
-		181F4CF71DE1E0180032B65F /* SJLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJLocationManager.m; sourceTree = "<group>"; };
+		181F4CFB1DE1E4780032B65F /* SJLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJLocationManager.h; sourceTree = "<group>"; };
+		181F4CFC1DE1E4780032B65F /* SJLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJLocationManager.m; sourceTree = "<group>"; };
 		CFDAAE081BCB531500DFD3D2 /* SJLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDAAE0C1BCB531500DFD3D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CFDAAE0E1BCB531500DFD3D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,19 +52,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		181F4CF41DE1E0180032B65F /* Vendor */ = {
+		181F4CF91DE1E4780032B65F /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				181F4CF51DE1E0180032B65F /* SJLocationManager */,
+				181F4CFA1DE1E4780032B65F /* SJLocationManager */,
 			);
-			path = Vendor;
+			name = Vendor;
+			path = SJLocation/Vendor;
 			sourceTree = "<group>";
 		};
-		181F4CF51DE1E0180032B65F /* SJLocationManager */ = {
+		181F4CFA1DE1E4780032B65F /* SJLocationManager */ = {
 			isa = PBXGroup;
 			children = (
-				181F4CF61DE1E0180032B65F /* SJLocationManager.h */,
-				181F4CF71DE1E0180032B65F /* SJLocationManager.m */,
+				181F4CFB1DE1E4780032B65F /* SJLocationManager.h */,
+				181F4CFC1DE1E4780032B65F /* SJLocationManager.m */,
 			);
 			path = SJLocationManager;
 			sourceTree = "<group>";
@@ -72,7 +73,7 @@
 		CFDAADFF1BCB531500DFD3D2 = {
 			isa = PBXGroup;
 			children = (
-				181F4CF41DE1E0180032B65F /* Vendor */,
+				181F4CF91DE1E4780032B65F /* Vendor */,
 				CFDAAE0A1BCB531500DFD3D2 /* SJLocation */,
 				CFDAAE091BCB531500DFD3D2 /* Products */,
 			);
@@ -215,7 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				181F4CF81DE1E0180032B65F /* SJLocationManager.m in Sources */,
+				181F4CFD1DE1E4780032B65F /* SJLocationManager.m in Sources */,
 				CFFF30011BCB855A0033B001 /* SJDetailViewController.m in Sources */,
 				CFDAAE101BCB531500DFD3D2 /* AppDelegate.m in Sources */,
 				CFFF30021BCB855A0033B001 /* SJRootTableViewController.m in Sources */,
