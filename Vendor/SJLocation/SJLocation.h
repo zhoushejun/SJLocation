@@ -1,5 +1,5 @@
 //
-//  SJLocationManager.h
+//  SJLocation.h
 //  SJLocation
 //
 //  Created by shejun.zhou on 15/10/12.
@@ -7,7 +7,7 @@
 //
 
 /**
- @header    SJLocationManager.h
+ @header    SJLocation.h
  @abstract  地理位置管理者
  @author    shejun.zhou
  @version   1.0 15/10/12 Creation
@@ -19,10 +19,10 @@
 typedef void(^LocationCompletionHandlerBlock)(NSDictionary *addressDictionary);
 
 /**
- @class     SJLocationManager
+ @class     SJLocation
  @abstract  地理位置管理者
  */
-@interface SJLocationManager : NSObject <CLLocationManagerDelegate>
+@interface SJLocation : NSObject <CLLocationManagerDelegate>
 
 @property (nonatomic, assign) BOOL autoStopLocation; ///< 定位到地理位置后立即关闭定位服务
 
@@ -30,7 +30,7 @@ typedef void(^LocationCompletionHandlerBlock)(NSDictionary *addressDictionary);
  @method    sharedLocationManager
  @abstract  获取地理位置管理者单例方法
  */
-+ (SJLocationManager *)sharedLocationManager;
++ (SJLocation *)sharedLocationManager;
 
 /**
  @method    requestLocationCompleteHandler:

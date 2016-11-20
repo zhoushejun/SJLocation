@@ -1,12 +1,12 @@
 //
-//  SJLocationManager.m
+//  SJLocation.m
 //  SJLocation
 //
 //  Created by shejun.zhou on 15/10/12.
 //  Copyright © 2015年 shejun.zhou. All rights reserved.
 //
 
-#import "SJLocationManager.h"
+#import "SJLocation.h"
 #import <UIKit/UIKit.h>
 
 /** @name DEBUG 模式下打印日志和当前行数 */
@@ -33,7 +33,7 @@
 #define kSJ_SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 // @}end of 获取屏幕 宽度、高度 及 状态栏 高度
 
-@interface SJLocationManager ()
+@interface SJLocation ()
 
 @property (nonatomic, strong) CLLocationManager *locationManager; ///< 系统地理位置管理者
 @property (nonatomic, strong) LocationCompletionHandlerBlock locationCompletionHandlerBlock; ///< 回调block
@@ -58,10 +58,10 @@
 
 @end
 
-@implementation SJLocationManager
+@implementation SJLocation
 
-+ (SJLocationManager *)sharedLocationManager {
-    static SJLocationManager *locationManager = nil;
++ (SJLocation *)sharedLocationManager {
+    static SJLocation *locationManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         locationManager = [[[self class] alloc] init];
