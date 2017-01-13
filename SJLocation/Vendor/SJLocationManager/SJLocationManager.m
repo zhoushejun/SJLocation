@@ -81,8 +81,20 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     SJLog(@"%@", locations);
     CLLocation *location = locations[0];
-    SJLog(@"altitude:%f", location.altitude);
-    SJLog(@"coordinate:%f - %f", location.coordinate.latitude, location.coordinate.longitude);
+    SJLog(@"海拔:%f", location.altitude);//海拔
+    SJLog(@"纬度:%f\n经度:%f", location.coordinate.latitude, location.coordinate.longitude);//经纬度
+    SJLog(@"精度:%f", location.horizontalAccuracy);
+    
+    NSString * deviceLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSDateFormatter * dateFormatter = [NSDateFormatter new];
+    NSLocale * locale = [[NSLocale alloc] initWithLocaleIdentifier:deviceLanguage];
+    
+    [dateFormatter setDateFormat:@"YYYY MM dd EEEE HH:MM:SS "];
+    [dateFormatter setLocale:locale];
+    
+    NSString * dateString = [dateFormatter stringFromDate:location.timestamp];
+    SJLog(@"定位时间:%@", dateString);
+
     
     CLGeocoder *geocoder=[[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -91,7 +103,13 @@
             NSDictionary *addressDictionary = placemark.addressDictionary;
             SJLog(@"addressDic:%@", addressDictionary);
             if (_locationCompletionHandlerBlock) {
-                _locationCompletionHandlerBlock(addressDictionary);
+                NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:[addressDictionary copy]];
+                dic[@"altitude"] = [NSNumber numberWithFloat:location.altitude];
+                dic[@"latitude"] = [NSNumber numberWithFloat:location.coordinate.latitude];
+                dic[@"longitude"] = [NSNumber numberWithFloat:location.coordinate.longitude];
+                dic[@"horizontalAccuracy"] = [NSNumber numberWithFloat:location.horizontalAccuracy];
+                dic[@"timestamp"] = location.timestamp.description;
+                _locationCompletionHandlerBlock(dic);
                 _locationCompletionHandlerBlock = nil;
                 if (_autoStopLocation) {
                     [self stopLocation]; ///< 如果不需要实时定位，使用完后立即关闭定位服务

@@ -80,7 +80,7 @@
                                       addressDictionary[@"City"],
                                       addressDictionary[@"SubLocality"],
                                       street];
-                
+                NSLog(@"定位信息：%@", addressDictionary);
                 NSLog(@"显示地址：%@", location);
                 
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
